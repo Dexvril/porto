@@ -1,5 +1,29 @@
 <script>
   import { fade, slide } from 'svelte/transition';
+  import { onMount } from 'svelte';
+
+  let lastScrollY = 0;
+  let hideNav = false;
+
+  onMount(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        hideNav = true;
+      } else {
+        hideNav = false;
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
 </script>
 
 <svelte:head>
@@ -26,6 +50,11 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hide {
+    transform: translateY(-100%);
   }
 
   nav {
@@ -48,7 +77,6 @@
     text-shadow: 0 0 8px #ff4d4d;
   }
 
-  /* Hero */
   .hero {
     text-align: center;
     padding: 5rem 2rem;
@@ -61,7 +89,6 @@
     text-shadow: 3px 3px 10px #000, -2px -2px 5px #b71c1c;
   }
 
-  /* Sections */
   .section {
     max-width: 1000px;
     margin: 2rem auto;
@@ -129,7 +156,6 @@
     border-top: 2px solid #7a0f1b;
   }
 
-  /* Responsive */
   @media (max-width: 768px) {
     header {
       padding: 0.5rem 1rem;
@@ -154,7 +180,7 @@
   }
 </style>
 
-<header>
+<header class:hide={hideNav}>
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
