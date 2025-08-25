@@ -87,14 +87,14 @@
   }
 
   .contact a {
-    color: #ff4d4d;
+    color: #f57777;
     text-decoration: none;
   }
 
   footer {
     text-align: center;
     padding: 1rem;
-    background-color: #ff4d4d;
+    background-color: #f08888;
     color: #1a1a1a;
   }
 </style>
