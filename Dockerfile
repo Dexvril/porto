@@ -1,20 +1,12 @@
-# Gunakan image Bun resmi
-FROM oven/bun:latest
-
-# Set direktori kerja
+FROM oven/bun:1 AS app
 WORKDIR /app
 
-# Salin file proyek
+COPY package.json bun.lock ./
+RUN bun install --no-cache --registry=https://registry.npmjs.org
+
 COPY . .
 
-# Install dependensi
-RUN bun install
-
-# Build aplikasi
 RUN bun run build
 
-# Expose port
-EXPOSE 5173
+CMD ["bun", "start"]
 
-# Jalankan aplikasi
-CMD ["bun", "run", "build/index.js"]
