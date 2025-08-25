@@ -28,9 +28,15 @@
     z-index: 100;
   }
 
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
   nav a {
     color: #f5f5f5;
-    margin: 0 1rem;
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s, text-shadow 0.3s;
@@ -125,14 +131,20 @@
 
   /* Responsive */
   @media (max-width: 768px) {
+    header {
+      padding: 0.5rem 1rem;
+    }
+
+    nav {
+      gap: 0.5rem;
+    }
+
     nav a {
-      display: block;
-      margin: 0.5rem 0;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .hero h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
     }
 
     .section {
@@ -182,7 +194,7 @@
 <section class="section contact" id="contact" transition:slide>
   <h2>Kontak</h2>
   <p>Hubungi saya melalui: <a href="mailto:plitvicegod@gmail.com">plitvicegod@gmail.com</a></p>
-  <p>Sosial: <a href="https://github.com/Dexvril">GitHub</a></p>
+  <p>Sosial: <a href="https://github.com/Dexvril" target="_blank">GitHub</a></p>
 </section>
 
 <footer>
