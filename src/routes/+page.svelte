@@ -127,7 +127,10 @@
 <section class="section about" id="about" transition:slide>
   <h2>Tentang Saya</h2>
   <img src="/profil.png" alt="Profile" />
-  <p> Saya adalah seorang yang sedang mencoba menggapai tujuannya</p>
+  <p> Perkenalkan nama saya maulana abi nugroho, saya lulusan Smkn1 pandeglang dengan jurusan Rpl,
+    saya suka dengan dunia komputer, terutama di bidang pemrograman web. Saya pernah membuat website untuk memonitoring webseite dengan menggunakan umami dan grafana.
+    Saya sedang mempelajari cara menggunakan n8n untuk mendapatkan alert dri chat whatsapp ke discord.
+  </p>
 </section>
 
 <section class="section projects" id="projects" transition:slide>
@@ -135,7 +138,7 @@
   <div class="projects-grid">
     <div class="project-card">
       <h3>Proyek 1</h3>
-      <p> Saya pernah membuat website untuk monitoring web lainnya menggunakan Umami.</p>
+      <p> Saya pernah membuat website untuk monitoring web menggunakan Umami.</p>
     </div>
     <div class="project-card">
       <h3>Proyek 2</h3>
