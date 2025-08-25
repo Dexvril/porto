@@ -9,56 +9,59 @@
 
 <style>
   :global(body) {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+    background: linear-gradient(180deg, #7a0f1b 0%, #1a1a1a 100%);
+    color: #f5f5f5;
     font-family: 'Cinzel', serif;
     margin: 0;
     padding: 0;
   }
 
   header {
-    background-color: #ff4d4d;
+    background: rgba(0, 0, 0, 0.8);
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #b71c1c;
   }
 
   nav a {
-    color: #1a1a1a;
-    margin: 0 1rem;
+    color: #f5f5f5;
+    margin: 0 1.2rem;
     text-decoration: none;
     font-weight: 700;
-    transition: color 0.3s;
+    font-size: 1.1rem;
+    transition: color 0.3s, text-shadow 0.3s;
   }
 
   nav a:hover {
-    color: #e0e0e0;
+    color: #ff4d4d;
+    text-shadow: 0 0 8px #ff4d4d;
   }
 
   .hero {
     text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(to bottom, #ff4d4d, #1a1a1a);
+    padding: 5rem 2rem;
+    background: radial-gradient(circle at top, #b71c1c, transparent 70%);
   }
 
   .hero h1 {
-    font-size: 3.5rem;
-    color: #e0e0e0;
-    text-shadow: 2px 2px 4px #000;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-    color: #e0e0e0;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 3px 3px 10px #000, -2px -2px 5px #b71c1c;
   }
 
   .section {
     max-width: 1000px;
     margin: 2rem auto;
     padding: 2rem;
-    background: rgba(255, 77, 77, 0.1);
-    border: 1px solid #ff4d4d;
-    border-radius: 8px;
+    background: rgba(20, 20, 20, 0.85);
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(183, 28, 28, 0.5);
+  }
+
+  h2 {
+    color: #ff4d4d;
+    text-shadow: 2px 2px 5px #000;
   }
 
   .about img {
@@ -66,36 +69,45 @@
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border: 2px solid #ff4d4d;
+    border: 3px solid #ff4d4d;
+    box-shadow: 0 0 15px rgba(183, 28, 28, 0.8);
   }
 
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .project-card {
-    background: #2a2a2a;
-    padding: 1rem;
+    background: #1c1c1c;
+    padding: 1.5rem;
     border-radius: 8px;
-    transition: transform 0.3s;
+    border: 2px solid #7a0f1b;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
 
   .project-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
   }
 
   .contact a {
-    color: #f57777;
+    color: #ff4d4d;
     text-decoration: none;
+    font-weight: 600;
+  }
+
+  .contact a:hover {
+    text-shadow: 0 0 8px #ff4d4d;
   }
 
   footer {
     text-align: center;
     padding: 1rem;
-    background-color: #f08888;
-    color: #1a1a1a;
+    background-color: #000;
+    color: #ff4d4d;
+    border-top: 2px solid #7a0f1b;
   }
 </style>
 
@@ -123,7 +135,7 @@
   <div class="projects-grid">
     <div class="project-card">
       <h3>Proyek 1</h3>
-      <p> Saya pernah membuat website untuk monitoring web lainnya menggunakan umami .</p>
+      <p> Saya pernah membuat website untuk monitoring web lainnya menggunakan Umami.</p>
     </div>
     <div class="project-card">
       <h3>Proyek 2</h3>
@@ -136,9 +148,9 @@
   </div>
 </section>
 
-<section class="section coDeskripsintact" id="contact" transition:slide>
+<section class="section contact" id="contact" transition:slide>
   <h2>Kontak</h2>
-  <p>Hubungi saya melalui: <a href="plitvicegod@gmail.com">plitvicegod@gmail.com</a></p>
+  <p>Hubungi saya melalui: <a href="mailto:plitvicegod@gmail.com">plitvicegod@gmail.com</a></p>
   <p>Tautan sosial: <a href="https://github.com/Dexvril">GitHub</a></p>
 </section>
 
