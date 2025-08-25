@@ -4,6 +4,7 @@
 
 <svelte:head>
   <title>Portofolio - The Non-Existence of You and Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 </svelte:head>
 
@@ -14,22 +15,26 @@
     font-family: 'Cinzel', serif;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
   }
 
   header {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 1rem 2rem;
     text-align: center;
     border-bottom: 3px solid #b71c1c;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   nav a {
     color: #f5f5f5;
-    margin: 0 1.2rem;
+    margin: 0 1rem;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1rem;
     transition: color 0.3s, text-shadow 0.3s;
+    font-size: 1.1rem;
   }
 
   nav a:hover {
@@ -37,6 +42,7 @@
     text-shadow: 0 0 8px #ff4d4d;
   }
 
+  /* Hero */
   .hero {
     text-align: center;
     padding: 5rem 2rem;
@@ -49,6 +55,7 @@
     text-shadow: 3px 3px 10px #000, -2px -2px 5px #b71c1c;
   }
 
+  /* Sections */
   .section {
     max-width: 1000px;
     margin: 2rem auto;
@@ -62,6 +69,11 @@
   h2 {
     color: #ff4d4d;
     text-shadow: 2px 2px 5px #000;
+    margin-bottom: 1rem;
+  }
+
+  .about {
+    text-align: center;
   }
 
   .about img {
@@ -71,6 +83,7 @@
     object-fit: cover;
     border: 3px solid #ff4d4d;
     box-shadow: 0 0 15px rgba(183, 28, 28, 0.8);
+    margin-bottom: 1rem;
   }
 
   .projects-grid {
@@ -109,6 +122,24 @@
     color: #ff4d4d;
     border-top: 2px solid #7a0f1b;
   }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav a {
+      display: block;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .section {
+      margin: 1rem;
+      padding: 1rem;
+    }
+  }
 </style>
 
 <header>
@@ -127,10 +158,7 @@
 <section class="section about" id="about" transition:slide>
   <h2>Tentang Saya</h2>
   <img src="/profil.png" alt="Profile" />
-  <p> Perkenalkan nama saya maulana abi nugroho, saya lulusan Smkn1 pandeglang dengan jurusan Rpl,
-    saya suka dengan dunia komputer, terutama di bidang pemrograman web. Saya pernah membuat website untuk memonitoring webseite dengan menggunakan umami dan grafana.
-    Saya sedang mempelajari cara menggunakan n8n untuk mendapatkan alert dri chat whatsapp ke discord.
-  </p>
+  <p>Perkenalkan nama saya Maulana Abi Nugroho, lulusan SMKN1 Pandeglang jurusan RPL. Saya suka dunia komputer, terutama pemrograman web.</p>
 </section>
 
 <section class="section projects" id="projects" transition:slide>
@@ -138,11 +166,11 @@
   <div class="projects-grid">
     <div class="project-card">
       <h3>Proyek 1</h3>
-      <p> Saya pernah membuat website untuk monitoring web menggunakan Umami.</p>
+      <p>Membuat website monitoring web menggunakan Umami.</p>
     </div>
     <div class="project-card">
       <h3>Proyek 2</h3>
-      <p>Coming Soon.</p>
+      <p>Membuat n8n untuk alert dari WhatsApp ke Discord.</p>
     </div>
     <div class="project-card">
       <h3>Proyek 3</h3>
@@ -154,7 +182,7 @@
 <section class="section contact" id="contact" transition:slide>
   <h2>Kontak</h2>
   <p>Hubungi saya melalui: <a href="mailto:plitvicegod@gmail.com">plitvicegod@gmail.com</a></p>
-  <p>Tautan sosial: <a href="https://github.com/Dexvril">GitHub</a></p>
+  <p>Sosial: <a href="https://github.com/Dexvril">GitHub</a></p>
 </section>
 
 <footer>
