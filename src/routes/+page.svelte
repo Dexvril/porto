@@ -8,7 +8,6 @@
   let theme = 'dark';
 
   onMount(() => {
-    // Cek preferensi sebelumnya
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) theme = savedTheme;
     else localStorage.setItem('theme', theme);
@@ -200,10 +199,19 @@
     color: var(--accent);
     text-decoration: none;
     font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
   }
 
   .contact a:hover {
     text-shadow: 0 0 8px var(--accent);
+  }
+
+  .contact svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--accent);
   }
 
   footer {
@@ -278,8 +286,35 @@
 
   <section class="section contact" id="contact" transition:slide>
     <h2>Kontak</h2>
-    <p>Hubungi saya melalui: <a href="mailto:plitvicegod@gmail.com">plitvicegod@gmail.com</a></p>
-    <p>Sosial: <a href="https://github.com/Dexvril" target="_blank">GitHub</a></p>
+    <p>
+      <a href="mailto:plitvicegod@gmail.com">
+        <!-- Gmail SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M20 4H4C2.897 4 2.009 4.897 2.009 6L2 18c0 
+          1.103.897 2 2 2h16c1.103 0 2-.897 
+          2-2V6c0-1.103-.897-2-2-2zm0 
+          4-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        plitvicegod@gmail.com
+      </a>
+    </p>
+    <p>
+      <a href="https://github.com/Dexvril" target="_blank">
+        <!-- GitHub SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 .5C5.65.5.5 5.65.5 12c0 
+          5.1 3.29 9.41 7.86 10.94.58.11.79-.25.79-.56v-2.2c-3.2.7-3.87-1.39-3.87-1.39-.53-1.35-1.3-1.71-1.3-1.71-1.06-.73.08-.72.08-.72 
+          1.17.08 1.78 1.21 1.78 1.21 1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.75-1.56-2.55-.29-5.23-1.28-5.23-5.69 
+          0-1.26.45-2.28 1.2-3.09-.12-.29-.52-1.46.11-3.04 
+          0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 
+          3.18-1.18 3.18-1.18.63 1.58.23 2.75.11 3.04.75.81 
+          1.2 1.83 1.2 3.09 0 4.42-2.68 5.39-5.24 5.67.42.36.8 
+          1.08.8 2.18v3.24c0 .31.21.67.8.56A10.52 10.52 0 0 0 
+          23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+        </svg>
+        GitHub
+      </a>
+    </p>
   </section>
 
   <footer>
