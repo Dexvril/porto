@@ -63,7 +63,7 @@
     <div class="projects-grid">
       <div class="project-card">
         <h3>Proyek 1</h3>
-        <p>Membuat website monitoring web menggunakan Umami.</p>
+        <p>Membuat website monitoring web menggunakan Grafana dan Umami.</p>
       </div>
       <div class="project-card">
         <h3>Proyek 2</h3>
