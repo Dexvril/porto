@@ -7,9 +7,9 @@
 <header class:hide={hideNav}>
   <nav>
     <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#about"><strong>Tentang Saya</strong></a>
+    <a href="#projects"><strong>Proyek Saya</strong></a>
+    <a href="#contact">Kontak</a>
   </nav>
   <button class="theme-toggle" on:click={toggleTheme}>
     {#if theme === 'dark'}
@@ -63,8 +63,12 @@
     border: 2px solid var(--accent);
     color: var(--accent);
     font-size: 1.2rem;
-    padding: 0.4rem 0.6rem;
-    border-radius: 50%;
+    width: 40px;   /* sama tinggi */
+    height: 40px;
+    border-radius: 50%; /* biar bulat */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: background 0.3s, color 0.3s, transform 0.2s;
   }
