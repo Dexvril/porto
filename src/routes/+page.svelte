@@ -189,6 +189,13 @@
     box-shadow: 0 0 15px var(--hover);
   }
 
+  .project-card h3 {
+    font-weight: bold;
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
   .contact a {
     color: var(--accent);
     text-decoration: none;
