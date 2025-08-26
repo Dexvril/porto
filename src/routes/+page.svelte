@@ -53,7 +53,7 @@
     <img src="/profil.png" alt="Profile" transition:fade />
     <h2>Tentang Saya</h2>
     <p>
-      Perkenalkan nama saya <b>Maulana Abi Nugroho</b>, lulusan SMKN1 Pandeglang jurusan RPL.
+      Perkenalkan nama saya <b>Maulana Abi Nugroho</b>, lulusan SMKN 1 Pandeglang jurusan RPL.
       Saya suka dunia komputer, terutama pemrograman web.
     </p>
   </section>
