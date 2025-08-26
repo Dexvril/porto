@@ -9,6 +9,7 @@
     <a href="#home">Home</a>
     <a href="#about"><strong>Tentang Saya</strong></a>
     <a href="#projects"><strong>Proyek Saya</strong></a>
+    <a href="/experience"><strong>Pengalaman</strong></a>
     <a href="#contact">Kontak</a>
   </nav>
   <button class="theme-toggle" on:click={toggleTheme}>
