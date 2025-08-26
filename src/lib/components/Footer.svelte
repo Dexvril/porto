@@ -7,7 +7,7 @@
       <a href="https://github.com/Dexvril" target="_blank">
         <i class="fab fa-github"></i> GitHub
       </a>
-      <a href="https://instagram.com/usernamekamu" target="_blank">
+      <a href="https://www.instagram.com/nvrl_abi" target="_blank">
         <i class="fab fa-instagram"></i> Instagram
       </a>
     </p>
