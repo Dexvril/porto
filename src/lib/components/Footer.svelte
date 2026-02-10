@@ -1,49 +1,10 @@
-<footer id="contact">
-  <div class="contact">
-    <p>
-      <a href="mailto:plitvicegod@gmail.com">
-        <i class="fas fa-envelope"></i> Email
-      </a>
-      <a href="https://github.com/Dexvril" target="_blank">
-        <i class="fab fa-github"></i> GitHub
-      </a>
-      <a href="https://www.instagram.com/nvrl_abi" target="_blank">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-    </p>
+<footer id="contact" class="py-12 border-t border-ash/20 text-center font-mono text-sm opacity-60 hover:opacity-100 transition-opacity">
+  <div class="mb-4 space-x-6">
+      <a href="mailto:plitvicegod@gmail.com" class="hover:text-crimson hover:line-through">EMAIL</a>
+      <a href="https://github.com/Dexvril" target="_blank" class="hover:text-crimson hover:line-through">GITHUB</a>
+      <a href="https://www.instagram.com/nvrl_abi" target="_blank" class="hover:text-crimson hover:line-through">INSTAGRAM</a>
   </div>
-  <p>&copy; 2025 Nvrl. All rights reserved.</p>
+  <p class="text-xs text-ash/50">
+      &copy; 2025 NVRL // <span class="uppercase">Existence Verified</span>
+  </p>
 </footer>
-
-<style>
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: var(--footer-bg);
-    color: var(--accent);
-    border-top: 2px solid var(--border);
-  }
-
-  .contact a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 0.5rem;
-    transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
-  }
-
-  .contact a:hover {
-    text-shadow: 0 0 8px var(--accent);
-    transform: scale(1.1);
-  }
-
-  .contact i {
-    margin-right: 0.3rem;
-  }
-
-  /* khusus Instagram hover */
-  .contact a[href*="instagram"]:hover {
-    color: #e1306c;
-    text-shadow: 0 0 8px #e1306c;
-  }
-</style>

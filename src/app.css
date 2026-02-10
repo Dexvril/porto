@@ -1,1 +1,34 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-void: #050505;
+  --color-paper: #f0f0f0;
+  --color-crimson: #ff2a2a;
+  --color-ash: #888888;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Courier Prime', monospace;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap');
+
+  body {
+    @apply bg-void text-paper font-sans antialiased selection:bg-crimson selection:text-void;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono font-bold tracking-tight;
+  }
+  
+  a {
+      @apply transition-colors duration-300 ease-in-out hover:text-crimson;
+  }
+}
+
+@layer utilities {
+    .glitch-effect {
+        /* Placeholder for a glitch effect utility if needed later */
+        position: relative;
+    }
+}

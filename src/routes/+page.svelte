@@ -1,183 +1,192 @@
 <script>
-  import { fade, slide } from "svelte/transition";
-  import { onMount } from "svelte";
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
-  import Header from "$lib/components/Header.svelte";
-  import Hero from "$lib/components/Hero.svelte";
-  import Footer from "$lib/components/Footer.svelte";
+	import Header from '$lib/components/Header.svelte';
+	import Hero from '$lib/components/Hero.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
-  let lastScrollY = 0;
-  let hideNav = false;
-  let theme = "dark";
+	let scrollY = 0;
+	let hideNav = false;
+	let lastScrollY = 0;
 
-  onMount(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) theme = savedTheme;
-    else localStorage.setItem("theme", theme);
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      hideNav = currentScrollY > lastScrollY && currentScrollY > 50;
-      lastScrollY = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
-
-  function toggleTheme() {
-    theme = theme === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", theme);
-  }
+	onMount(() => {
+		const handleScroll = () => {
+			scrollY = window.scrollY;
+			hideNav = scrollY > lastScrollY && scrollY > 50;
+			lastScrollY = scrollY;
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	});
 </script>
 
 <svelte:head>
-  <title>Portofolio Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+	<title>NO_EXISTENCE // PORTFOLIO</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- FontAwesome preserved just in case, but unused in new design -->
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+	/>
 </svelte:head>
 
-<main class={theme}>
-  <Header {theme} {hideNav} {toggleTheme} />
+<main
+	class="min-h-screen overflow-x-hidden bg-void text-paper selection:bg-crimson selection:text-white"
+>
+	<Header {hideNav} />
 
-  <Hero />
+	<Hero />
 
-  <section class="section about" id="about" transition:slide>
-    <img src="/profil.png" alt="Profile" transition:fade />
-    <h2>Tentang Saya</h2>
-    <p>
-      Perkenalkan nama saya Maulana Abi Nugroho, lulusan SMKN 1 Pandeglang jurusan RPL.
-      Saya mendalami bidang kesukaan saya yaitu komputer dan memiliki pengalaman dalam bidang web developer.
-    </p>
-  </section>
+	<section id="about" class="mx-auto ml-8 max-w-4xl border-l border-ash/20 px-8 py-24 md:ml-auto">
+		<div class="mb-12" in:fade={{ duration: 1000, delay: 200 }}>
+			<h2 class="mb-4 text-4xl tracking-widest text-crimson uppercase">// ABOUT_SUBJECT</h2>
+			<div class="flex flex-col items-start gap-8 md:flex-row">
+				<img
+					src="/profil.png"
+					alt="Subject"
+					class="h-32 w-32 rounded-none border border-ash/50 mix-blend-luminosity contrast-125 grayscale transition-all duration-500 hover:mix-blend-normal"
+				/>
+				<div class="max-w-lg font-mono text-sm leading-relaxed text-ash">
+					<p class="mb-4">
+						IDENTIFIER: <span class="text-white">Maulana Abi Nugroho</span><br />
+						ORIGIN: SMKN 1 Pandeglang [RPL]<br />
+						STATUS: <span class="animate-pulse text-crimson">ACTIVE</span>
+					</p>
+					<p>
+						Specializing in web development and verify system integrity. Exploring the boundaries
+						between code and absence.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-  <section class="section projects" id="projects" transition:slide>
-    <h2>Proyek Saya</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Proyek 1</h3>
-        <p>Membuat website monitoring web menggunakan Grafana dan Umami.</p>
-      </div>
-      <div class="project-card">
-        <h3>Proyek 2</h3>
-        <p>Membuat n8n untuk alert dari WhatsApp ke Discord.</p>
-      </div>
-      <div class="project-card">
-        <h3>Proyek 3</h3>
-        <p>Coming Soon.</p>
-      </div>
-    </div>
-  </section>
+	<section id="projects" class="mx-auto max-w-6xl px-8 py-24">
+		<h2
+			class="mb-12 border-b border-ash/20 pb-4 text-right text-4xl tracking-widest text-white uppercase"
+		>
+			// PROJECTS_LOG
+		</h2>
 
-  <Footer />
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+			<!-- Project 1 -->
+			<div
+				class="group relative overflow-hidden border border-ash/20 p-6 transition-all duration-500 hover:border-crimson hover:bg-white/5"
+			>
+				<div
+					class="absolute top-0 left-0 h-1 w-full -translate-x-full transform bg-crimson transition-transform duration-300 group-hover:translate-x-0"
+				></div>
+				<h3 class="mb-2 text-xl font-bold text-white transition-colors group-hover:text-crimson">
+					MONITOR_WEB
+				</h3>
+				<p class="mb-4 font-mono text-xs text-ash">Grafana // Umami</p>
+				<p class="text-sm text-gray-400">
+					System monitoring dashboard implementation with graphical visualization.
+				</p>
+			</div>
+
+			<!-- Project 2 -->
+			<div
+				class="group relative overflow-hidden border border-ash/20 p-6 transition-all duration-500 hover:border-crimson hover:bg-white/5"
+			>
+				<div
+					class="absolute top-0 left-0 h-1 w-full -translate-x-full transform bg-crimson transition-transform duration-300 group-hover:translate-x-0"
+				></div>
+				<h3 class="mb-2 text-xl font-bold text-white transition-colors group-hover:text-crimson">
+					ALERT_SYSTEM
+				</h3>
+				<p class="mb-4 font-mono text-xs text-ash">n8n // Discord // WhatsApp</p>
+				<p class="text-sm text-gray-400">
+					Automated bridging protocol for alert dissemination across communication channels.
+				</p>
+			</div>
+
+			<!-- Project 3 -->
+			<div
+				class="group relative overflow-hidden border border-ash/20 p-6 opacity-50 transition-all duration-500 hover:opacity-100"
+			>
+				<h3 class="mb-2 text-xl font-bold text-ash transition-colors group-hover:text-crimson">
+					NULL_POINTER
+				</h3>
+				<p class="mb-4 font-mono text-xs text-ash">???</p>
+				<p class="text-sm text-gray-400">Data corrupted. Coming soon.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact" class="mx-auto mr-8 max-w-4xl border-r border-ash/20 px-8 py-24 md:mr-auto">
+		<h2 class="mb-8 text-4xl tracking-widest text-crimson uppercase">// CONTACT_SIGNAL</h2>
+
+		<form
+			on:submit|preventDefault={async (e) => {
+				const formData = new FormData(e.target);
+				const data = Object.fromEntries(formData);
+				const res = await fetch('/api/contact', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(data)
+				});
+				const result = await res.json();
+				if (result.success) {
+					alert('SIGNAL_RECEIVED: Message stored in Bun SQLite.');
+					e.target.reset();
+				} else {
+					alert('ERROR: ' + result.error);
+				}
+			}}
+			class="space-y-6 font-mono"
+		>
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+				<div class="flex flex-col">
+					<label for="name" class="mb-2 text-xs text-ash">> IDENTIFIER</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						required
+						class="border border-ash/30 bg-transparent p-3 text-white transition-colors outline-none focus:border-crimson"
+						placeholder="Name..."
+					/>
+				</div>
+				<div class="flex flex-col">
+					<label for="email" class="mb-2 text-xs text-ash">> ENCODING (EMAIL)</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						required
+						class="border border-ash/30 bg-transparent p-3 text-white transition-colors outline-none focus:border-crimson"
+						placeholder="email@example.com"
+					/>
+				</div>
+			</div>
+			<div class="flex flex-col">
+				<label for="message" class="mb-2 text-xs text-ash">> TRANSMISSION</label>
+				<textarea
+					id="message"
+					name="message"
+					required
+					rows="4"
+					class="resize-none border border-ash/30 bg-transparent p-3 text-white transition-colors outline-none focus:border-crimson"
+					placeholder="Enter message..."
+				></textarea>
+			</div>
+			<button
+				type="submit"
+				class="border border-crimson px-8 py-3 text-sm tracking-widest text-crimson uppercase transition-all duration-300 hover:bg-crimson hover:text-white"
+			>
+				[ SEND_SIGNAL ]
+			</button>
+		</form>
+	</section>
+
+	<Footer />
 </main>
 
 <style>
-  :global(body) {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    scroll-behavior: smooth;
-  }
-
-  .dark {
-    --bg-primary: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
-    --bg-section: rgba(30, 30, 30, 0.9);
-    --text-color: #ffffff;
-    --accent: #e0e0e0;
-    --border: #ffffff;
-    --hover: rgba(255, 255, 255, 0.2);
-    --nav-bg: rgba(20, 20, 20, 0.9);
-    --footer-bg: #0d0d0d;
-  }
-
-  .light {
-    --bg-primary: linear-gradient(180deg, #001f3f 0%, #003366 100%);
-    --bg-section: rgba(0, 30, 60, 0.85);
-    --text-color: #ffffff;
-    --accent: #4fc3f7;
-    --border: #03a9f4;
-    --hover: rgba(79, 195, 247, 0.5);
-    --nav-bg: rgba(0, 20, 40, 0.85);
-    --footer-bg: #001122;
-  }
-
-  main {
-    background: var(--bg-primary);
-    color: var(--text-color);
-    min-height: 100vh;
-  }
-
-  .section {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: var(--bg-section);
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    box-shadow: 0 0 20px var(--hover);
-  }
-
-  h2 {
-    color: var(--accent);
-    text-shadow: 2px 2px 5px #000;
-    margin-bottom: 1rem;
-    font-weight: bold; /* 🔥 sudah bold */
-    font-size: 1.8rem;
-  }
-
-  .about {
-    text-align: center;
-  }
-
-  .about img {
-    display: block;
-    margin: 0 auto 1rem auto;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 15px var(--hover);
-  }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .project-card {
-    background: rgba(10, 10, 20, 0.9);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 2px solid var(--border);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--hover);
-  }
-
-  .project-card h3 {
-    font-weight: bold;
-    color: var(--accent);
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .section {
-      margin: 1rem;
-      padding: 1rem;
-    }
-  }
+	:global(html) {
+		scroll-behavior: smooth;
+		background-color: #050505;
+	}
 </style>

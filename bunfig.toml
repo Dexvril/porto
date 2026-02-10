@@ -1,0 +1,7 @@
+[install]
+# Prefer Bun's lockfile
+lockfile = true
+
+[test]
+# Default test runner configuration
+root = "."
