@@ -5,8 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   plugins: [sveltekit(), tailwindcss()],
   preview: {
-    allowedHosts: ["porto.nvrl.my.id"], 
-    port: 3001                          
+    allowedHosts: ["nvrl.my.id"],
+    port: 3001
   }
 });
 

@@ -1,12 +1,18 @@
-FROM oven/bun:1 AS app
+FROM oven/bun:1 AS build
 WORKDIR /app
 
 COPY package.json bun.lock ./
-RUN bun install --no-cache --registry=https://registry.npmjs.org
+RUN bun install --frozen-lockfile
 
 COPY . .
-
 RUN bun run build
 
-CMD ["bun", "start"]
+FROM oven/bun:1-slim
+WORKDIR /app
 
+COPY --from=build /app/build ./build
+COPY --from=build /app/package.json ./
+
+EXPOSE 3001
+
+CMD ["bun", "./build/index.js"]
