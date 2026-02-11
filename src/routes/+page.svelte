@@ -51,7 +51,7 @@
 				<div class="max-w-lg font-mono text-sm leading-relaxed text-ash">
 					<p class="mb-4">
 						IDENTIFIER: <span class="text-white">Maulana Abi Nugroho</span><br />
-						ORIGIN: SMKN 1 Pandeglang [RPL]<br />
+						ORIGIN: Pandeglang <br />
 						STATUS: <span class="animate-pulse text-crimson">ACTIVE</span>
 					</p>
 					<p>
