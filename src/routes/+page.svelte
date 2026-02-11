@@ -39,9 +39,9 @@
 
 	<Hero />
 
-	<section id="about" class="mx-auto ml-8 max-w-4xl border-l border-ash/20 px-8 py-24 md:ml-auto">
+	<section id="about" class="mx-auto max-w-4xl border-l border-ash/20 px-4 py-12 md:px-8 md:py-24 md:ml-auto">
 		<div class="mb-12" in:fade={{ duration: 1000, delay: 200 }}>
-			<h2 class="mb-4 text-4xl tracking-widest text-crimson uppercase">// ABOUT_SUBJECT</h2>
+			<h2 class="mb-4 text-2xl md:text-4xl tracking-widest text-crimson uppercase">// ABOUT_SUBJECT</h2>
 			<div class="flex flex-col items-start gap-8 md:flex-row">
 				<img
 					src="/profil.png"
@@ -63,9 +63,9 @@
 		</div>
 	</section>
 
-	<section id="projects" class="mx-auto max-w-6xl px-8 py-24">
+	<section id="projects" class="mx-auto max-w-6xl px-4 md:px-8 py-12 md:py-24">
 		<h2
-			class="mb-12 border-b border-ash/20 pb-4 text-right text-4xl tracking-widest text-white uppercase"
+			class="mb-12 border-b border-ash/20 pb-4 text-right text-2xl md:text-4xl tracking-widest text-white uppercase"
 		>
 			// PROJECTS_LOG
 		</h2>
