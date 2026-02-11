@@ -25,7 +25,7 @@
 		<p class="mt-8 font-sans text-xl tracking-[0.5em] text-ash uppercase md:text-2xl">
 			Maulana Abi Nugroho
 		</p>
-		<p class="mt-2 font-mono text-sm text-crimson">// WEB_DEVELOPER // SURREALIST</p>
+		<p class="mt-2 font-mono text-sm text-crimson">// WEB_DEVELOPER // GAMER</p>
 	</div>
 
 	<div class="absolute bottom-10 animate-bounce text-ash">↓</div>
